@@ -1,0 +1,260 @@
+<?xml version="1.0" standalone="no"?>
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"  
+   xmlns="http://www.w3.org/2000/svg"
+
+   onload="top.document.getElementById('svg_canvas').svg=evt.target.ownerDocument"
+   onmouseup="if (top.isOn) top.released()"
+   onmousemove="if (top.isOn) top.drag(evt)"   >
+
+ <defs>
+      <filter id="filter3805">
+      
+      <feGaussianBlur
+         id="feGaussianBlur3807"
+         stdDeviation="2.3"
+         in="SourceAlpha"
+         result="result0" />
+      <feMorphology
+         id="feMorphology3809"
+         in="SourceAlpha"
+         radius="6.6"
+         result="result1" />
+      <feGaussianBlur
+         id="feGaussianBlur3811"
+         stdDeviation="8.9"
+         in="result1" />
+      <feColorMatrix
+         id="feColorMatrix3813"
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.3 0"
+         result="result91" />
+      <feComposite
+         id="feComposite3815"
+         in2="result91"
+         in="result0"
+         operator="out"
+         result="result2" />
+      <feGaussianBlur
+         id="feGaussianBlur3817"
+         stdDeviation="1.7"
+         result="result4" />
+      <feDiffuseLighting
+         id="feDiffuseLighting3819"
+         surfaceScale="10"
+         result="result92">
+        <feDistantLight
+           id="feDistantLight3821"
+           azimuth="225"
+           elevation="45" />
+      </feDiffuseLighting>
+      <feBlend
+         id="feBlend3823"
+         in2="SourceGraphic"
+         mode="multiply"
+         result="result93" />
+      <feComposite
+         id="feComposite3825"
+         in2="SourceAlpha"
+         operator="in"
+         result="result3" />
+      <feSpecularLighting
+         id="feSpecularLighting3827"
+         in="result4"
+         surfaceScale="5"
+         specularExponent="17.9"
+         result="result94">
+        <feDistantLight
+           id="feDistantLight3829"
+           azimuth="225"
+           elevation="45" />
+      </feSpecularLighting>
+      <feComposite
+         id="feComposite3831"
+         in2="result3"
+         operator="atop" />
+    </filter>   
+
+  <clipPath id = "casingClip">
+
+      <rect
+       
+       width="235"
+       height="208"
+       x="73"
+       y="27" />
+
+        </clipPath>
+
+
+
+  </defs>
+
+ <rect
+           height="300"
+           width="400"
+           y="-0.1"
+           x="-0.1"
+           id="backdrop"
+           style="fill:#334" />
+
+   <rect
+       id="screenBackdrop"
+       width="240"
+       height="220"
+       x="66"
+       y="23" 
+       fill="#111"/>
+
+<!-- view rotation WHEELS  -->
+   <rect
+           onmousedown="if (top.isOn) top.zWheel.grip(evt)"
+           
+           height="30"
+           width="145"
+           x="95"
+           y="250"
+           id="zWheel"
+           fill="#0f0" />
+      
+<rect
+           onmousedown="if (top.isOn) top.xWheel.grip(evt)"
+           height="150"
+           width="30"
+           x="20"
+           y="75"
+           id="xWheel"
+           style="fill:#00ff00" />
+      
+<!-- Lock BUTTON -->
+
+<circle
+          id="onoff"
+          onmousedown="top.displayToggle()"
+          onmouseover="this.setAttributeNS(null,'fill','#f80')"
+          onmouseout="this.setAttributeNS(null,'fill','#c00')"
+          r="20"
+          cx="35"
+          cy="35"
+          fill="#aa0000" />
+
+
+<image
+      pointer-events="none"
+      id="casing"
+      height="520"
+      width="420"
+      x="-10"
+      y="-110"
+      xlink:href="../img/casing.png" />
+
+
+<image
+      id="testCard"   
+      pointer-events="none"
+      display= "inline"
+      height="210"
+      width="240"
+      x="70"
+      y="25"
+      xlink:href="../img/testcard.png" />
+
+<!-- PERSPECTIVE/ORTHOGRAPHIC SWITCH -->
+
+
+<rect
+           height="10"
+           width="33"
+           y="260"
+           x="20"
+           display="none"
+           id="poFrame"
+           style="fill:#0000ff"         />
+
+ <rect
+           onmousedown="if (top.isOn) top.poSwitch.grip(evt)"
+           style="fill:#334"
+           height="20"
+           width="12"
+           x="25"
+           y="255"
+           id="poHandle"
+           filter="url(#filter3805)"
+         />
+     
+
+<!-- Contrast SLIDER -->
+ 
+        <rect
+          display="none"
+           height="80"
+           width="25"
+           x="340"
+           y="180"
+           id="contrastFrame"
+           style="fill:#aa0" />
+      
+        <rect
+          onmousedown="if (top.isOn) top.contrastSlider.grip(evt)"
+           height="14"
+           width="20"
+           x="346"
+           y="220"
+           id="contrast"
+           fill="#334" 
+           filter="url(#filter3805)"
+         />  
+
+
+<!-- Colour SLIDER -->
+ 
+        <rect
+         
+           display="none"
+           height="83"
+           width="25"
+           x="340"
+           y="33"
+           id="saturationFrame"
+           style="fill:#00ff00" />
+      
+             <rect
+          onmousedown="if (top.isOn) top.saturationSlider.grip(evt)"
+           height="14"
+           width="20"
+           x="346"
+           y="80"
+           id="saturation"
+           fill="#334" 
+
+          filter="url(#filter3805)"
+/>  
+
+
+<!-- ZOOM Handle -->
+
+ <rect
+           display="none"
+           height="20"
+           width="43"
+           x="265"
+           y="250"
+           id="zoomFrame"
+           style="fill:#bbb" />
+
+ <rect
+           onmousedown="if (top.isOn) top.zoomHandle.grip(evt)"
+           style="fill:#334"
+           height="20"
+           width="12"
+           x="282"
+           y="252"
+           id="zoomHandle"
+           filter="url(#filter3805)"
+         />
+
+
+
+
+</svg>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>3d viewer</title>
+  <meta name="author" content="Nick Braun" />
+  <meta name="Content-Script-Type" content="text/javascript" />
+  <meta name="Content-Style-Type" content="text/css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/classes.js"  type="application/javascript"/></script>
+  <script src="js/ui_components.js"  type="application/javascript"/></script>
+  <script src="js/primitives.js"  type="application/javascript"/></script>
+  <script src="js/main.js" type="application/javascript"/></script>
+ </head>
+
+ <body>
+
+  <h1>&nbsp;SVG/Javascript 3d Viewer</h1>
+
+   <div id="loading"> You must enable JavaScript to run this content</div>
+   <script type="text/javascript">
+      document.getElementById('loading').innerHTML = 'Loading...'
+   </script>
+
+   <div id="container">
+      Author: Nick Braun, 2011; source code <a href="http://github.com/chefnb/3dviewer">here</a> 
+      <p>Use O-P to toggle orthographic vs perspective modes<p><br/>
+
+     <object id="svg_canvas" data="svg/canvas.svg" width="800" height="500" type="image/svg+xml" onload="init()"/>
+   </div>
+ </body>
+</html>

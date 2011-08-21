@@ -1,0 +1,12 @@
+
+3d viewer
+
+Author: Nick Braun, 2011
+
+Contact: nick@sharpitor.com
+
+Language: Javascript/SVG; no javascript libraries used
+
+Features:
+ * Perspective vs orthographic modes
+ * Lambert shading 

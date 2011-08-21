@@ -1,0 +1,12 @@
+
+#container 
+ { visibility:hidden;    /* until loaded */
+   margin : 40px;  }
+
+body
+ { background-color:#543;
+   color:#ddd;
+   font-family:"Courier new"; }
+
+a:hover  {color: #fff; }
+a  {color: #aaa;}
