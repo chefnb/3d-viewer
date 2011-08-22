@@ -10,6 +10,16 @@
   <script src="js/ui_components.js"  type="application/javascript"/></script>
   <script src="js/primitives.js"  type="application/javascript"/></script>
   <script src="js/main.js" type="application/javascript"/></script>
+
+  <script>
+    window.onload= function(){
+        if (!document.getElementById('svg_canvas').svg) {
+         document.getElementById('loading').innerHTML = "\
+         Sorry, there is a compatibility problem with the browser you are using. Try a different one"
+          }    
+     } 
+   </script>
+
  </head>
 
  <body>

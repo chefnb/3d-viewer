@@ -1,7 +1,13 @@
 
 #container 
  { visibility:hidden;    /* until loaded */
-   margin : 40px;  }
+   margin : 40px; 
+   background-color:#543;
+ }
+
+#loading
+  {margin : 40px;
+  } 
 
 body
  { background-color:#543;

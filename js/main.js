@@ -1,12 +1,11 @@
-/*     
+//     
+// Lambertian viewer  - SVG/Javascript
+// 
+// Author: Nick Braun, 2011
+//
+// main.js
+//
 
- Lambertian viewer  - SVG/Javascript
- 
- Author: Nick Braun, 2011
-
- main.js
-
-*/
 
 
    var zWheel,xWheel,saturationSlider,zoomHandle,poSwitch,contrastSlider  // UI elements
