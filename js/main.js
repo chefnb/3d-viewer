@@ -24,8 +24,14 @@
         canvas=document.getElementById('svg_canvas').svg
 
         theSpace = new Tellus(canvas)
-        theSpace.setCamera(250,0,-30,0,0,0,0)   
-        theSpace.addShape(BOX)
+        theSpace.setCamera(250,0,-60,0,0,0,0)   
+
+        theSpace.addShape(SHELL)
+        theSpace.addShape(SOUNDBOARD)
+        theSpace.addShape(ROSETTE)
+        theSpace.addShape(BANDING)
+        theSpace.addShape(NECK)
+        theSpace.addShape(BRIDGE)
      
        
         zWheel= new HWheel(canvas,'zWheel',function (delta){theSpace.rotateZ(delta/60.0)}) 
