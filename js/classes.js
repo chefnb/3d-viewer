@@ -97,6 +97,14 @@ function HSVtoRGB(h,s,v){
        }
 
      this.update = function(){
+
+        for (var i = 0; i < shapes.length; i++){
+             shapes[i].updateCofM()
+          }
+
+        shapes.sort(function(a, b){  return b.pa-a .pa  })   // painter algorithm sorting on faces
+  
+
         for (var i = 0; i < shapes.length; i++){
              shapes[i].update()
           }
@@ -111,14 +119,16 @@ function HSVtoRGB(h,s,v){
 
      
       this.faces=[]; 
-     
-    
+      var x=primitive.CofM[0]  // center of mass for painter algorithm on shapes
+      var y=primitive.CofM[1]
+      var z=primitive.CofM[2]
+      this.pa=null
 
-      for (var i = 0; i < primitive.length; i++){
-       this.faces.push(new Face(p,primitive[i].vertices,primitive[i].hue))
+      for (var i = 0; i < primitive.faces.length; i++){
+       this.faces.push(new Face(p,primitive.faces[i].vertices,primitive.faces[i].hue))
       }
     
-      this.faces.sort(function(a, b){  return a.mean_pa-b.mean_pa  })   // painter algorithm sorting
+      this.faces.sort(function(a, b){  return a.mean_pa-b.mean_pa  })   // painter algorithm sorting on faces
   
       for (var i = 0; i < this.faces.length; i++){
          p.canvas.documentElement.appendChild(this.faces[i].svgElement)
@@ -126,6 +136,22 @@ function HSVtoRGB(h,s,v){
       
 
     // method
+     this.updateCofM = function() {
+   // apply CTM - global coordinate transform matrix
+
+             var m=p.ctMatrix      
+
+
+             var xd=m[0][0]*x+m[0][1]*y +m[0][2]*z;   
+             var yd=m[1][0]*x+m[1][1]*y +m[1][2]*z;       
+             var zd=m[2][0]*x+m[2][1]*y +m[2][2]*z;       
+
+       
+            uv_projection=p.camera.uvProjection(xd,yd,zd)
+
+            this.pa=uv_projection.pa
+         }
+
 
      this.update = function() {
 
@@ -325,6 +351,7 @@ For further reference see Andrejs Treibergs' site
               var pathString="M "
 
               for (var i = 0; i < points.length; i++){
+     //             for (var i = 0; i < max(points.length,4); i++){
                   this.vertices[i].update();
                   pathString+=this.vertices[i].u+","+this.vertices[i].v+" ";
                   this.mean_pa+=this.vertices[i].pa
