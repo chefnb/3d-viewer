@@ -4,7 +4,8 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"  
    xmlns="http://www.w3.org/2000/svg"
-
+   height="300"
+   width="400"
    onload="top.document.getElementById('svg_canvas').svg=evt.target.ownerDocument"
    onmouseup="if (top.isOn) top.released()"
    onmousemove="if (top.isOn) top.drag(evt)"   >
